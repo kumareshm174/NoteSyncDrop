@@ -7,8 +7,9 @@
 //
 
 #import "AppDelegate.h"
-#import "DetailViewController.h"
-
+#import <DropboxSDK/DropboxSDK.h>
+#import "HomeViewController.h"
+#import "ListNoteViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -18,7 +19,30 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    DBSession *dbSession = [[DBSession alloc]
+                            initWithAppKey:@"71j8s3v0wb9tivk"
+                            appSecret:@"ljrd4k4obfn3w8o"
+                            root:kDBRootDropbox]; // either kDBRootAppFolder or kDBRootDropbox
+    [DBSession setSharedSession:dbSession];
+
     return YES;
+}
+
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url
+  sourceApplication:(NSString *)source annotation:(id)annotation {
+    if ([[DBSession sharedSession] handleOpenURL:url]) {
+        if ([[DBSession sharedSession] isLinked]) {
+            UINavigationController *navController = (UINavigationController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+            ListNoteViewController *nc = [storyboard instantiateViewControllerWithIdentifier:@"ListNoteView"];
+            [navController pushViewController:nc animated:NO];
+            NSLog(@"App linked successfully!");
+            // At this point you can start making API calls
+        }
+        return YES;
+    }
+    // Add whatever other url handling code your app requires here
+    return NO;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

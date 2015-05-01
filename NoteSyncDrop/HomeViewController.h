@@ -1,5 +1,5 @@
 //
-//  MasterViewController.h
+//  HomeViewController.h
 //  NoteSyncDrop
 //
 //  Created by Kumaresh Mutharasan on 30/04/15.
@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MasterViewController : UITableViewController
+@interface HomeViewController : UIViewController
 
-
+- (IBAction)linkDropBoxClicked:(id)sender;
 @end
-
