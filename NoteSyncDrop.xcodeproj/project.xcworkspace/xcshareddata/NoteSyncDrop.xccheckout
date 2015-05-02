@@ -22,7 +22,7 @@
 		<key>09560E2FF959F1309461D2F88C5FA824AD89E289</key>
 		<string>../..</string>
 		<key>CDDCDBD12EFB4BE5F577656F41184FDE42E50F5D</key>
-		<string>../../NoteSyncDrop/</string>
+		<string>../../NoteSyncDrop</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/kumareshm174/NoteSyncDrop.git</string>

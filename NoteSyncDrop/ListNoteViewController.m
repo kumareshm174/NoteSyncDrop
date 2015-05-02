@@ -46,13 +46,13 @@
 - (void)restClient:(DBRestClient *)client loadedMetadata:(DBMetadata *)metadata {
 
     if (metadata.isDirectory) {
-//        NSLog(@"Folder '%@' contains:", metadata.path);
         [self.arrayofNotes removeAllObjects];
         for (DBMetadata *file in metadata.contents) {
             Notes *notes = [[Notes alloc]init];;
             notes.Title  = file.filename;
             notes.path  = file.path;
             notes.reV  = file.rev;
+            notes.isDirectory  = file.isDirectory;
             [self.arrayofNotes addObject:notes];
         }
         [self.tableView reloadData];
@@ -69,6 +69,16 @@ loadMetadataFailedWithError:(NSError *)error {
     
 }
 
+-(void)restClient:(DBRestClient *)client deletedPath:(NSString *)path
+{
+    KAAlert(@"",@"File successfully deleted");
+}
+
+-(void)restClient:(DBRestClient *)client deletePathFailedWithError:(NSError *)error
+{
+    KAAlert(@"Sorry!",@"Error deleting file try again later");
+
+}
 
 //Update note files
 -(void)updateFiles
@@ -129,25 +139,26 @@ loadMetadataFailedWithError:(NSError *)error {
 }
 
 
-/*
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
 
-/*
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
+        Notes *notes = self.arrayofNotes[indexPath.row];
+        [self.arrayofNotes removeObject:notes];
+        [self.restClient deletePath:notes.path];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
 
 /*
 // Override to support rearranging the table view.

@@ -42,9 +42,7 @@
     [self.textViewNotes becomeFirstResponder];
     if (self.notes) {
         [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
-        NSString *localDir = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
-        NSString *localPath = [localDir stringByAppendingPathComponent:self.notes.Title];
-        [self.restClient loadFile:self.notes.path intoPath:localPath];
+        [self.restClient loadFile:self.notes.path intoPath:[self getLocalPathofFile:self.notes.Title withDesc:nil andDownload:YES]];
         self.textFieldTitle.text = self.notes.Title;
     }
 }
@@ -73,18 +71,34 @@
     }
     
     [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
-
-    NSString *localDir = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
-    NSString *localPath = [localDir stringByAppendingPathComponent:(self.notes)?self.notes.Title:self.textFieldTitle.text];
-    [self.textViewNotes.text writeToFile:localPath atomically:YES encoding:NSUTF8StringEncoding error:nil];
     
     // Upload file to Dropbox
-    NSString *destDir = @"/Notes";
-    [self.restClient uploadFile:(self.notes)?self.notes.Title:self.textFieldTitle.text toPath:destDir withParentRev:(self.notes)?self.notes.reV:nil fromPath:localPath];
+    if (self.notes) {
+        [self.restClient moveFrom:kFolderPath(self.notes.Title) toPath:kFolderPath(self.textFieldTitle.text)];
+        
+    }
+    else
+    {
+        [self.restClient uploadFile:self.textFieldTitle.text toPath:@"/Notes" withParentRev:nil fromPath:[self getLocalPathofFile:self.textFieldTitle.text withDesc:self.textViewNotes.text andDownload:NO]];
+    }
+    
 }
 
 
 #pragma DBRestClient Delegate
+
+
+- (void)restClient:(DBRestClient*)client movedPath:(NSString *)from_path to:(DBMetadata *)result
+{
+    self.textFieldTitle.text = result.filename;
+    [self.restClient uploadFile:result.filename toPath:@"/Notes" withParentRev:result.rev fromPath:[self getLocalPathofFile:result.filename withDesc:self.textViewNotes.text andDownload:NO]];
+
+}
+- (void)restClient:(DBRestClient*)client movePathFailedWithError:(NSError*)error
+{
+    [MBProgressHUD hideAllHUDsForView:self.navigationController.view animated:YES];
+
+}
 
 - (void)restClient:(DBRestClient *)client loadedFile:(NSString *)localPath
        contentType:(NSString *)contentType metadata:(DBMetadata *)metadata {
@@ -117,8 +131,16 @@
 //    NSLog(@"File upload failed with error: %@", error);
     KAAlert(@"Sorry!",@"File upload failed. Please try again later");
     [MBProgressHUD hideAllHUDsForView:self.navigationController.view animated:YES];
+}
 
-
+-(NSString *)getLocalPathofFile : (NSString *)name withDesc : (NSString *)desc andDownload:(BOOL)isDownload
+{
+    NSString *localDir = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
+    NSString *localPath = [localDir stringByAppendingPathComponent:name];
+    if (!isDownload) {
+        [desc writeToFile:localPath atomically:YES encoding:NSUTF8StringEncoding error:nil];
+      }
+    return localPath;
 }
 
 

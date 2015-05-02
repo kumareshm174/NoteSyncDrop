@@ -9,6 +9,8 @@
 #define KAppKey @"71j8s3v0wb9tivk"
 #define KSecretKey @"ljrd4k4obfn3w8o"
 
+
+#define kFolderPath(X) [NSString stringWithFormat:@"/Notes/%@",(X)]
 //Check for valid array
 #define ISARRAY(X) (X && [X isKindOfClass:[NSArray class]] && [X count] > 0)
 
