@@ -12,6 +12,8 @@
 	<dict>
 		<key>09560E2FF959F1309461D2F88C5FA824AD89E289</key>
 		<string>https://github.com/kumareshm174/NoteSyncDrop.git</string>
+		<key>CDDCDBD12EFB4BE5F577656F41184FDE42E50F5D</key>
+		<string>https://github.com/kumareshm174/NoteSyncDrop.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>NoteSyncDrop.xcodeproj</string>
@@ -19,6 +21,8 @@
 	<dict>
 		<key>09560E2FF959F1309461D2F88C5FA824AD89E289</key>
 		<string>../..</string>
+		<key>CDDCDBD12EFB4BE5F577656F41184FDE42E50F5D</key>
+		<string>../../NoteSyncDrop/</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/kumareshm174/NoteSyncDrop.git</string>
@@ -33,6 +37,14 @@
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>09560E2FF959F1309461D2F88C5FA824AD89E289</string>
+			<key>IDESourceControlWCCName</key>
+			<string>NoteSyncDrop</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>CDDCDBD12EFB4BE5F577656F41184FDE42E50F5D</string>
 			<key>IDESourceControlWCCName</key>
 			<string>NoteSyncDrop</string>
 		</dict>
