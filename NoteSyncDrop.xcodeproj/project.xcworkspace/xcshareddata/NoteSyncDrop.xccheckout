@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5488FE6F-BE09-4BD2-A2AA-A0FCCBD2814F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>NoteSyncDrop</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>09560E2FF959F1309461D2F88C5FA824AD89E289</key>
+		<string>https://github.com/kumareshm174/NoteSyncDrop.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>NoteSyncDrop.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>09560E2FF959F1309461D2F88C5FA824AD89E289</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/kumareshm174/NoteSyncDrop.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>09560E2FF959F1309461D2F88C5FA824AD89E289</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>09560E2FF959F1309461D2F88C5FA824AD89E289</string>
+			<key>IDESourceControlWCCName</key>
+			<string>NoteSyncDrop</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -10,28 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NoteSyncDrop/ListNoteViewController.m"
-            timestampString = "452155359.226264"
+            timestampString = "452157996.138342"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "-restClient:loadedMetadata:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NoteSyncDrop/ListNoteViewController.m"
-            timestampString = "452155359.226264"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "-updateFiles"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "-restClient:loadMetadataFailedWithError:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NoteSyncDrop/NoteDetailViewController.m"
-            timestampString = "452155474.626925"
+            timestampString = "452158693.871904"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "-restClient:loadFileFailedWithError:"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,28 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NoteSyncDrop/NoteDetailViewController.m"
-            timestampString = "452155474.626925"
+            timestampString = "452158573.505115"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "-restClient:loadedFile:contentType:metadata:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NoteSyncDrop/NoteDetailViewController.m"
-            timestampString = "452155866.66535"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
-            landmarkName = "-restClient:uploadedFile:from:metadata:"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "-doneClicked"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -90,12 +58,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NoteSyncDrop/ListNoteViewController.m"
-            timestampString = "452155866.66535"
+            timestampString = "452241809.084447"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "-restClient:loadMetadataFailedWithError:"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

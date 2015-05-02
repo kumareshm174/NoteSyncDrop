@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 #import <DropboxSDK/DropboxSDK.h>
 #import "ListNoteViewController.h"
+#import "AppDelegate.h"
 @interface HomeViewController ()
 
 @end
@@ -17,19 +18,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"Note_Sync";
     
+    self.title = @"Note_Sync";
+    [self validateDropBox];
+    
+   
+    // Do any additional setup after loading the view.
+}
+
+-(void)validateDropBox
+{
     if ([[DBSession sharedSession] isLinked]) {
-        NSLog(@"App linked successfully!");
-
+//        NSLog(@"App linked successfully!");
+        
         // At this point you can start making API calls
-
+        
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
         ListNoteViewController *nc = [storyboard instantiateViewControllerWithIdentifier:@"ListNoteView"];
         [self.navigationController pushViewController:nc animated:NO];
     }
-
-    // Do any additional setup after loading the view.
+  
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,6 +58,10 @@
 
 - (IBAction)linkDropBoxClicked:(id)sender
 {
+    if (![[AppDelegate appdelegate] hasConnectedToNetwork]) {
+        [[AppDelegate appdelegate] showAlertFailure];
+        return;
+    }
     if (![[DBSession sharedSession] isLinked]) {
         [[DBSession sharedSession] linkFromController:self];
     }

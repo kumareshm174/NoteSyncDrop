@@ -516,7 +516,9 @@ static const CGFloat kDetailsLabelFontSize = 12.f;
 	totalSize.width = MAX(totalSize.width, indicatorF.size.width);
 	totalSize.height += indicatorF.size.height;
 	
-	CGSize labelSize = [label.text sizeWithFont:label.font];
+//	CGSize labelSize = [label.text sizeWithFont:label.font];
+    CGSize labelSize = [label.text sizeWithAttributes:@{NSFontAttributeName: label.font}];
+
 	labelSize.width = MIN(labelSize.width, maxWidth);
 	totalSize.width = MAX(totalSize.width, labelSize.width);
 	totalSize.height += labelSize.height;
@@ -524,10 +526,13 @@ static const CGFloat kDetailsLabelFontSize = 12.f;
 		totalSize.height += kPadding;
 	}
 
-	CGFloat remainingHeight = bounds.size.height - totalSize.height - kPadding - 4 * margin; 
-	CGSize maxSize = CGSizeMake(maxWidth, remainingHeight);
-	CGSize detailsLabelSize = [detailsLabel.text sizeWithFont:detailsLabel.font 
-								constrainedToSize:maxSize lineBreakMode:detailsLabel.lineBreakMode];
+//	CGFloat remainingHeight = bounds.size.height - totalSize.height - kPadding - 4 * margin; 
+//	CGSize maxSize = CGSizeMake(maxWidth, remainingHeight);
+    
+    CGSize detailsLabelSize = [detailsLabel.text sizeWithAttributes:@{NSFontAttributeName: detailsLabel.font}];
+
+//	CGSize detailsLabelSize = [detailsLabel.text sizeWithFont:detailsLabel.font
+//								constrainedToSize:maxSize lineBreakMode:detailsLabel.lineBreakMode];
 	totalSize.width = MAX(totalSize.width, detailsLabelSize.width);
 	totalSize.height += detailsLabelSize.height;
 	if (detailsLabelSize.height > 0.f && (indicatorF.size.height > 0.f || labelSize.height > 0.f)) {

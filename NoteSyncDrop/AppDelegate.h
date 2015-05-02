@@ -11,7 +11,11 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (nonatomic,retain) UIAlertView *alertInternetFail;
 
+- (int)hasConnectedToNetwork;
+-(void) showAlertFailure ;
++(AppDelegate *)appdelegate;
 
 @end
 

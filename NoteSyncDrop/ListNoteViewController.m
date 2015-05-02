@@ -11,6 +11,8 @@
 #import <DropboxSDK/DropboxSDK.h>
 #import "Notes.h"
 #import "MBProgressHUD.h"
+#import "Constants.h"
+#import "AppDelegate.h"
 
 @interface ListNoteViewController ()<DBRestClientDelegate,NoteDelegate>
 @property (nonatomic, strong) DBRestClient *restClient;
@@ -26,23 +28,25 @@
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject)];
     self.navigationItem.rightBarButtonItem = addButton;
     
+    if (![[AppDelegate appdelegate] hasConnectedToNetwork]) {
+        [[AppDelegate appdelegate] showAlertFailure];
+        return;
+    }
+    
     self.arrayofNotes = [NSMutableArray array];
     self.restClient = [[DBRestClient alloc] initWithSession:[DBSession sharedSession]];
     self.restClient.delegate = self;
     [self.restClient loadMetadata:@"/Notes"];
     [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
 
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+#pragma DBRestClient Delegate
+
 - (void)restClient:(DBRestClient *)client loadedMetadata:(DBMetadata *)metadata {
+
     if (metadata.isDirectory) {
-        NSLog(@"Folder '%@' contains:", metadata.path);
+//        NSLog(@"Folder '%@' contains:", metadata.path);
         [self.arrayofNotes removeAllObjects];
         for (DBMetadata *file in metadata.contents) {
             Notes *notes = [[Notes alloc]init];;
@@ -57,18 +61,23 @@
     }
 }
 
+- (void)restClient:(DBRestClient *)client
+loadMetadataFailedWithError:(NSError *)error {
+//    NSLog(@"Error loading metadata: %@", error);
+    KAAlert(@"Sorry!",@"Error loading data.Please try again later");
+    [MBProgressHUD hideAllHUDsForView:self.navigationController.view animated:YES];
+    
+}
+
+
+//Update note files
 -(void)updateFiles
 {
     [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
     [self.restClient loadMetadata:@"/Notes"];
 }
 
-- (void)restClient:(DBRestClient *)client
-loadMetadataFailedWithError:(NSError *)error {
-    NSLog(@"Error loading metadata: %@", error);
-    [MBProgressHUD hideAllHUDsForView:self.navigationController.view animated:YES];
 
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

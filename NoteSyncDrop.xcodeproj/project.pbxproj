@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1D420E781AF357CD00B539E1 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D420E771AF357CD00B539E1 /* MBProgressHUD.m */; };
+		1D420E7B1AF3664F00B539E1 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D420E7A1AF3664F00B539E1 /* Reachability.m */; };
 		1DA6E93D1AF29ABC001F1673 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA6E93C1AF29ABC001F1673 /* main.m */; };
 		1DA6E9401AF29ABC001F1673 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA6E93F1AF29ABC001F1673 /* AppDelegate.m */; };
 		1DA6E9491AF29ABC001F1673 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DA6E9471AF29ABC001F1673 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 		1DA6E96F1AF29DD1001F1673 /* ListNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA6E96E1AF29DD1001F1673 /* ListNoteViewController.m */; };
 		1DA6E9721AF29ECC001F1673 /* Notes.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA6E9711AF29ECC001F1673 /* Notes.m */; };
 		1DA6E9751AF2A0B8001F1673 /* NoteDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA6E9741AF2A0B8001F1673 /* NoteDetailViewController.m */; };
+		1DD231EE1AF4AA6500D071F8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD231ED1AF4AA6500D071F8 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,8 @@
 /* Begin PBXFileReference section */
 		1D420E761AF357CD00B539E1 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		1D420E771AF357CD00B539E1 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		1D420E791AF3664F00B539E1 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		1D420E7A1AF3664F00B539E1 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		1DA6E9371AF29ABC001F1673 /* NoteSyncDrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteSyncDrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DA6E93B1AF29ABC001F1673 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1DA6E93C1AF29ABC001F1673 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -55,6 +59,7 @@
 		1DA6E9711AF29ECC001F1673 /* Notes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Notes.m; sourceTree = "<group>"; };
 		1DA6E9731AF2A0B8001F1673 /* NoteDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteDetailViewController.h; sourceTree = "<group>"; };
 		1DA6E9741AF2A0B8001F1673 /* NoteDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteDetailViewController.m; sourceTree = "<group>"; };
+		1DD231ED1AF4AA6500D071F8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DD231EE1AF4AA6500D071F8 /* SystemConfiguration.framework in Frameworks */,
 				1DA6E96A1AF29C0C001F1673 /* DropboxSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,17 +106,10 @@
 				1DA6E93E1AF29ABC001F1673 /* AppDelegate.h */,
 				1DA6E93F1AF29ABC001F1673 /* AppDelegate.m */,
 				1DA6E96C1AF29CF3001F1673 /* Constants.h */,
-				1DA6E9631AF29B7C001F1673 /* HomeViewController.h */,
-				1DA6E9641AF29B7C001F1673 /* HomeViewController.m */,
-				1DA6E96D1AF29DD1001F1673 /* ListNoteViewController.h */,
-				1DA6E96E1AF29DD1001F1673 /* ListNoteViewController.m */,
-				1DA6E9731AF2A0B8001F1673 /* NoteDetailViewController.h */,
-				1DA6E9741AF2A0B8001F1673 /* NoteDetailViewController.m */,
-				1DA6E9701AF29ECC001F1673 /* Notes.h */,
-				1DA6E9711AF29ECC001F1673 /* Notes.m */,
+				1DF5209A1AF3CFEC00EED006 /* Controllers */,
+				1DF520991AF3CFD600EED006 /* Models */,
 				1DA6E9471AF29ABC001F1673 /* Main.storyboard */,
-				1D420E761AF357CD00B539E1 /* MBProgressHUD.h */,
-				1D420E771AF357CD00B539E1 /* MBProgressHUD.m */,
+				1DF5209B1AF3CFFD00EED006 /* Helpers */,
 				1DA6E96B1AF29C18001F1673 /* Frameworks */,
 				1DA6E94A1AF29ABC001F1673 /* Images.xcassets */,
 				1DA6E94C1AF29ABC001F1673 /* LaunchScreen.xib */,
@@ -148,9 +147,43 @@
 		1DA6E96B1AF29C18001F1673 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1DD231ED1AF4AA6500D071F8 /* SystemConfiguration.framework */,
 				1DA6E9691AF29C0C001F1673 /* DropboxSDK.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1DF520991AF3CFD600EED006 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1DA6E9701AF29ECC001F1673 /* Notes.h */,
+				1DA6E9711AF29ECC001F1673 /* Notes.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		1DF5209A1AF3CFEC00EED006 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1DA6E9631AF29B7C001F1673 /* HomeViewController.h */,
+				1DA6E9641AF29B7C001F1673 /* HomeViewController.m */,
+				1DA6E96D1AF29DD1001F1673 /* ListNoteViewController.h */,
+				1DA6E96E1AF29DD1001F1673 /* ListNoteViewController.m */,
+				1DA6E9731AF2A0B8001F1673 /* NoteDetailViewController.h */,
+				1DA6E9741AF2A0B8001F1673 /* NoteDetailViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		1DF5209B1AF3CFFD00EED006 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				1D420E791AF3664F00B539E1 /* Reachability.h */,
+				1D420E7A1AF3664F00B539E1 /* Reachability.m */,
+				1D420E761AF357CD00B539E1 /* MBProgressHUD.h */,
+				1D420E771AF357CD00B539E1 /* MBProgressHUD.m */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,6 +288,7 @@
 			files = (
 				1DA6E96F1AF29DD1001F1673 /* ListNoteViewController.m in Sources */,
 				1DA6E9721AF29ECC001F1673 /* Notes.m in Sources */,
+				1D420E7B1AF3664F00B539E1 /* Reachability.m in Sources */,
 				1DA6E9401AF29ABC001F1673 /* AppDelegate.m in Sources */,
 				1DA6E93D1AF29ABC001F1673 /* main.m in Sources */,
 				1DA6E9651AF29B7C001F1673 /* HomeViewController.m in Sources */,

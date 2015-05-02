@@ -16,7 +16,7 @@
 
 @end
 
-@interface NoteDetailViewController : UIViewController
+@interface NoteDetailViewController : UIViewController<UITextViewDelegate,UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *textFieldTitle;
 @property (weak, nonatomic) IBOutlet UITextView *textViewNotes;
