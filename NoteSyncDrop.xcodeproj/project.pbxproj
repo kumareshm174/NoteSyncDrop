@@ -21,6 +21,8 @@
 		1DA6E9721AF29ECC001F1673 /* Notes.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA6E9711AF29ECC001F1673 /* Notes.m */; };
 		1DA6E9751AF2A0B8001F1673 /* NoteDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DA6E9741AF2A0B8001F1673 /* NoteDetailViewController.m */; };
 		1DD231EE1AF4AA6500D071F8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD231ED1AF4AA6500D071F8 /* SystemConfiguration.framework */; };
+		1DD231F01AF515DC00D071F8 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD231EF1AF515DC00D071F8 /* Security.framework */; };
+		1DD231F21AF515E600D071F8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD231F11AF515E600D071F8 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		1DA6E9731AF2A0B8001F1673 /* NoteDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteDetailViewController.h; sourceTree = "<group>"; };
 		1DA6E9741AF2A0B8001F1673 /* NoteDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteDetailViewController.m; sourceTree = "<group>"; };
 		1DD231ED1AF4AA6500D071F8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		1DD231EF1AF515DC00D071F8 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		1DD231F11AF515E600D071F8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DD231F21AF515E600D071F8 /* QuartzCore.framework in Frameworks */,
+				1DD231F01AF515DC00D071F8 /* Security.framework in Frameworks */,
 				1DD231EE1AF4AA6500D071F8 /* SystemConfiguration.framework in Frameworks */,
 				1DA6E96A1AF29C0C001F1673 /* DropboxSDK.framework in Frameworks */,
 			);
@@ -147,6 +153,8 @@
 		1DA6E96B1AF29C18001F1673 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1DD231F11AF515E600D071F8 /* QuartzCore.framework */,
+				1DD231EF1AF515DC00D071F8 /* Security.framework */,
 				1DD231ED1AF4AA6500D071F8 /* SystemConfiguration.framework */,
 				1DA6E9691AF29C0C001F1673 /* DropboxSDK.framework */,
 			);
