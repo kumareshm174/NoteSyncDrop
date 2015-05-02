@@ -52,7 +52,6 @@
             notes.Title  = file.filename;
             notes.path  = file.path;
             notes.reV  = file.rev;
-            notes.isDirectory  = file.isDirectory;
             [self.arrayofNotes addObject:notes];
         }
         [self.tableView reloadData];
@@ -77,7 +76,6 @@ loadMetadataFailedWithError:(NSError *)error {
 -(void)restClient:(DBRestClient *)client deletePathFailedWithError:(NSError *)error
 {
     KAAlert(@"Sorry!",@"Error deleting file try again later");
-
 }
 
 //Update note files

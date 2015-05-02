@@ -13,6 +13,5 @@
 @property(nonatomic,retain) NSString *Description;
 @property(nonatomic,retain) NSString *path;
 @property(nonatomic,retain) NSString *reV;
-@property(nonatomic,assign) BOOL isDirectory;
 
 @end
