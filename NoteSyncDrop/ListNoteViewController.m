@@ -36,12 +36,26 @@
     self.arrayofNotes = [NSMutableArray array];
     self.restClient = [[DBRestClient alloc] initWithSession:[DBSession sharedSession]];
     self.restClient.delegate = self;
-    [self.restClient loadMetadata:@"/Notes"];
+    (![[[NSUserDefaults standardUserDefaults]valueForKey:kFolderCreated]isEqualToString:@"Y"] )?[self.restClient createFolder:@"/Notes"] : [self.restClient loadMetadata:@"/Notes"];
+
     [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
 
 }
 
 #pragma DBRestClient Delegate
+
+- (void)restClient:(DBRestClient*)client createdFolder:(DBMetadata*)folder
+{
+    [[NSUserDefaults standardUserDefaults]setValue:@"Y" forKey:kFolderCreated];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+    [self.restClient loadMetadata:@"/Notes"];
+}
+
+- (void)restClient:(DBRestClient*)client createFolderFailedWithError:(NSError*)error
+{
+    [MBProgressHUD hideAllHUDsForView:self.navigationController.view animated:YES];
+ 
+}
 
 - (void)restClient:(DBRestClient *)client loadedMetadata:(DBMetadata *)metadata {
 

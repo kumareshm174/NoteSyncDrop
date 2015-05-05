@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <DropboxSDK/DropboxSDK.h>
 
-@interface HomeViewController : UIViewController
+@interface HomeViewController : UIViewController<DBRestClientDelegate>
+@property (nonatomic, strong) DBRestClient *restClient;
 
 - (IBAction)linkDropBoxClicked:(id)sender;
 @end
